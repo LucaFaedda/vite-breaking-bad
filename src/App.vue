@@ -1,5 +1,11 @@
 <script>
+import AppHeader from './components/AppHeader.vue';
+import AppListCard from './components/AppListCard.vue';
     export default {
+      components:{
+        AppHeader,
+        AppListCard
+      }
       
     }
 </script>   
@@ -8,6 +14,7 @@
     
   </div>
 </template>
-<style lang="">
+<style lang="scss">
+  @use './styles/general.scss' as *;
   
 </style>
