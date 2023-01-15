@@ -13,6 +13,7 @@ import {store} from './store.js'
       },
       data() {
         return {
+          
           store
         }
       },
@@ -24,6 +25,7 @@ import {store} from './store.js'
         eseguiListaCarte(){
           axios.get(store.url).then((response) =>{
             store.listaCard = response.data.data
+            store.loader = true
             // mi ero dimenticato di cambiare. avevo tenuto il consoleLog
           })
         }
@@ -35,7 +37,7 @@ import {store} from './store.js'
   <div>
     <AppHeader message="Yu-Gi-Oh API"></AppHeader>
     <main>
-      <AppMain>
+      <AppMain  :caricamento ="loader">
       </AppMain>
     </main>
   </div>
