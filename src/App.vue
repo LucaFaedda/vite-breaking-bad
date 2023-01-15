@@ -13,7 +13,6 @@ import {store} from './store.js'
       },
       data() {
         return {
-          listaCard: [],
           store
         }
       },
@@ -24,8 +23,8 @@ import {store} from './store.js'
       methods: {
         eseguiListaCarte(){
           axios.get(store.url).then((response) =>{
-            console.log(response.data.data)
-            
+            store.listaCard = response.data.data
+            // mi ero dimenticato di cambiare. avevo tenuto il consoleLog
           })
         }
       },
@@ -35,7 +34,10 @@ import {store} from './store.js'
 <template lang="">
   <div>
     <AppHeader message="Yu-Gi-Oh API"></AppHeader>
-    <AppMain></AppMain>
+    <main>
+      <AppMain>
+      </AppMain>
+    </main>
   </div>
 </template>
 <style lang="scss">
