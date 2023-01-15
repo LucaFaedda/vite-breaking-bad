@@ -1,4 +1,6 @@
+@use 'node_modules/bootstrap/scss/bootstrap.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 
 * {
@@ -9,4 +11,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: rgba(24, 24, 99, 0.884);
+
 }
