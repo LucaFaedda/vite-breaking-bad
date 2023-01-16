@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppListCard from './components/AppListCard.vue';
+import SelectCard from './components/SelectCard.vue';
 import axios from 'axios';
 
 import {store} from './store.js'
@@ -9,7 +10,8 @@ import {store} from './store.js'
       components:{
         AppHeader,
         AppMain,
-        AppListCard
+        AppListCard,
+        SelectCard
       },
       data() {
         return {
@@ -25,7 +27,7 @@ import {store} from './store.js'
         eseguiListaCarte(){
           axios.get(store.url).then((response) =>{
             store.listaCard = response.data.data
-            store.loader = true
+            setTimeout(() => {store.loader = true}, 3000) 
             // mi ero dimenticato di cambiare. avevo tenuto il consoleLog
           })
         }
@@ -37,6 +39,7 @@ import {store} from './store.js'
   <div>
     <AppHeader message="Yu-Gi-Oh API"></AppHeader>
     <main>
+      <SelectCard></SelectCard>
       <AppMain  :caricamento ="loader">
       </AppMain>
     </main>
