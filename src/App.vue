@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppListCard from './components/AppListCard.vue';
+import SelectCard from './components/SelectCard.vue';
 
 import axios from 'axios';
 
@@ -11,18 +12,15 @@ import {store} from './store.js'
         AppHeader,
         AppMain,
         AppListCard,
-
+        SelectCard
       },
       data() {
         return {
-          
           store
         }
       },
       created(){
         this.eseguiListaCarte()
-        this.archetypeLista()
-
       },
       methods: {
         eseguiListaCarte(){
@@ -31,12 +29,7 @@ import {store} from './store.js'
             setTimeout(() => {store.loader = true}, 1000) 
             // mi ero dimenticato di cambiare. avevo tenuto il consoleLog
           })
-        },
-        archetypeLista(){
-          axios.get(store.archetype).then((response) =>{
-            store.archetypeArray = response.data})
-          }
-        // andava creata un'altra chiamata API, ovviamente va messa anche in store
+        }
       }
       
     }
@@ -44,10 +37,8 @@ import {store} from './store.js'
 <template lang="">
   <div>
     <AppHeader message="Yu-Gi-Oh API"></AppHeader>
-    <main>
-
-      <AppMain  :caricamento ="loader"></AppMain>
-    </main>
+    <SelectCard @selezionaCarta = "eseguiListaCarte"></SelectCard>
+    <AppMain  :caricamento ="loader"></AppMain>
   </div>
 </template>
 <style lang="scss">
