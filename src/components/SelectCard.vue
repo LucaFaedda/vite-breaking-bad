@@ -22,6 +22,7 @@ import {store} from '../store'
             <div class="row">
                 <div class="col-4 ">
                     <select  class="form-select  mt-3" aria-label="Default select example" v-model="store.selected" @change="$emit('selezionaCarta')">
+                    <option value="" disable-value>Seleziona Archetyipo</option>
                     <option v-for="item in arrayArchetype"  :value="item">{{item}}</option>
                 </select>
                 </div>

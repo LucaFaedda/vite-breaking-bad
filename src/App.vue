@@ -29,7 +29,7 @@ import {store} from './store.js'
 
           axios.get(nuovoUrl).then((response) =>{
             store.listaCard = response.data.data
-            setTimeout(() => {store.loader = true}, 1000) 
+            setTimeout(() => {store.loader = true}, 3000) 
             // mi ero dimenticato di cambiare. avevo tenuto il consoleLog
           })
         }
