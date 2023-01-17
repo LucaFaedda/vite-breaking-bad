@@ -24,7 +24,10 @@ import {store} from './store.js'
       },
       methods: {
         eseguiListaCarte(){
-          axios.get(store.url).then((response) =>{
+          let nuovoUrl = `${store.url}${store.selected}`
+          // si poteva aggiungere un nuovo url. selezionando quello che ho nello store e aggiungendo il selected che cambia ad ogni option che posso avere.
+
+          axios.get(nuovoUrl).then((response) =>{
             store.listaCard = response.data.data
             setTimeout(() => {store.loader = true}, 1000) 
             // mi ero dimenticato di cambiare. avevo tenuto il consoleLog
