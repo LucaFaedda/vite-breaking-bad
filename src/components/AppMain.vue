@@ -14,7 +14,7 @@ import {store} from '../store'
 </script>
 <template lang="">
     <div>
-        <div class="container bg-primary mt-2">
+        <div class="container bg-primary mt-2 bg-light">
             <div class="row">
                 <div >
                     <div v-if="store.loader == false" class="col-12 m-5 d-flex justify-content-center"><p><a href="https://giphy.com/gifs/the-magic-word-3ohzdQ1IynzclJldUQ">via GIPHY</a></p></div>

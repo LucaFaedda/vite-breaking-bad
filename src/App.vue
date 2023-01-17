@@ -39,7 +39,7 @@ import {store} from './store.js'
 </script>   
 <template lang="">
   <div>
-    <AppHeader message="Yu-Gi-Oh API"></AppHeader>
+    <AppHeader class="bg-light" message="Yu-Gi-Oh API"></AppHeader>
     <SelectCard @selezionaCarta = "eseguiListaCarte"></SelectCard>
     <AppMain  :caricamento ="loader"></AppMain>
   </div>
